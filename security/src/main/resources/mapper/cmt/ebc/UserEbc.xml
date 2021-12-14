@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="smb.ebc.UserEbc"> 
+
+  <select id="retrieveAllAdminDocumentUpload" parameterType="HashMap" resultType="map">
+  <![CDATA[
+
+   		SELECT  
+		        A.UPL_ID					AS "uploadId"
+		       ,A.CODE						AS "code"
+		       ,A.UPL_NAME					AS "uploadName"
+		       ,A.upl_name_detail           AS "uploadNameDetail"
+		       ,IFNULL(B.CNT, 0)            AS "userCount"
+		       ,asign_status                AS "asignStatus"
+		FROM tbl_upload A LEFT JOIN (
+		      SELECT
+		             UPL_ID 
+		             ,COUNT(USER_ACCESS) CNT
+		      FROM  tbl_file_control 
+		      GROUP BY UPL_ID
+		)B ON A.UPL_ID = B.UPL_ID
+		LEFT JOIN (
+		        SELECT 
+		        	 UPL_ID 
+		        	,ASIGN_STATUS 
+		        FROM tbl_file_control 
+		        group by UPL_ID , asign_status
+		) k on A.UPL_ID = k.UPL_ID
+		WHERE A.is_delete = 'N'
+		ORDER BY A.UPL_ID DESC
+		
+  ]]>
+  </select>
+  
+</mapper>
