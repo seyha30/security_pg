@@ -1,4 +1,4 @@
-package smb.cmt;
+package smb.cmt.entity;
 
 import java.util.Collection;
 
@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserDetail implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
-	User user;
-
-	public UserDetail() {
-		new User();
+	private User user;
+	
+	public UserDetail(User user) {
+		this.user = user;
 	}
 
 	@Override
@@ -21,32 +21,32 @@ public class UserDetail implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		return this.getPassword();
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return this.getUsername();
+		return user.getUserName();
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return this.isAccountNonExpired();
+		return user.isAccountNonExpired();
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return this.isAccountNonLocked();
+		return user.isAccountNonLocked();
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return true;
+		return user.isCredentialsNonExpired();
 	}
 
 	@Override
 	public boolean isEnabled() {
-		return this.isEnabled();
+		return user.isEnable();
 	}
 
 }

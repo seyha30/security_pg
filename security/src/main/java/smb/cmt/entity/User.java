@@ -1,4 +1,4 @@
-package smb.cmt;
+package smb.cmt.entity;
 
 import java.util.Date;
 
@@ -11,7 +11,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.apache.naming.java.javaURLContextFactory;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration;
 
 import lombok.Data;
 
@@ -55,5 +57,7 @@ public class User {
 
 	@Column(name = "IS_ENABLE")
 	private boolean isEnable;
+	@Column(name = "isCredentialsNonExpired")
+	private boolean isCredentialsNonExpired;
 
 }
