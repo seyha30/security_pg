@@ -18,7 +18,7 @@ import org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration;
 import lombok.Data;
 
 @Entity
-@Table(name = "tbl_user")
+@Table(name = "sys_user")
 @Data
 public class User {
 
