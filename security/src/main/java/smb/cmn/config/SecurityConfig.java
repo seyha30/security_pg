@@ -1,4 +1,4 @@
-package smb.cmt.config;
+package smb.cmn.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

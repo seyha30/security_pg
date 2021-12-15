@@ -1,4 +1,4 @@
-package smb.cmt.service;
+package smb.cmn.service;
 
 import javax.annotation.Resource;
 
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import smb.cmt.ebc.UserEbc;
-import smb.cmt.entity.UserDetail;
+import smb.cmn.ebc.UserEbc;
+import smb.cmn.entity.UserDetail;
 
 @Component
 public class MyUserDetailService implements UserDetailsService {
@@ -22,7 +22,8 @@ public class MyUserDetailService implements UserDetailsService {
 		if (myUserDetail == null) {
 			throw new UsernameNotFoundException("User name does not exist : " + username);
 		}
-		return null;
+		
+		return myUserDetail;
 	}
 
 }

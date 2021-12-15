@@ -1,4 +1,4 @@
-package smb.cmt.entity;
+package smb.cmn.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,11 +15,12 @@ public class Menu {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private Integer id;
+	
 	@Column(name = "nm")
 	private String name;
 
 	@Column(name = "url", length = 500, nullable = false)
 	private String url;
-	
+
 }

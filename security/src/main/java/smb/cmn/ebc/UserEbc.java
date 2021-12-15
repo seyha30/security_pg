@@ -1,4 +1,4 @@
-package smb.cmt.ebc;
+package smb.cmn.ebc;
 
 import java.util.HashMap;
 import java.util.List;

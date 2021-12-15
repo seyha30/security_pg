@@ -1,4 +1,4 @@
-package smb.cmt.entity;
+package smb.cmn.entity;
 
 import java.util.Date;
 

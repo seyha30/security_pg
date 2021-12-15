@@ -1,4 +1,4 @@
-package smb.cmt.entity;
+package smb.cmn.entity;
 
 import java.util.Date;
 
@@ -26,6 +26,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USE_ID")
 	private Long id;
+	
 	@Column(name = "USE_START_DATE", insertable = true, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -57,6 +58,7 @@ public class User {
 
 	@Column(name = "IS_ENABLE")
 	private boolean isEnable;
+	
 	@Column(name = "isCredentialsNonExpired")
 	private boolean isCredentialsNonExpired;
 

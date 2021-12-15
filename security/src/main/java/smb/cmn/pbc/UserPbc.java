@@ -1,4 +1,4 @@
-package smb.cmt.pbc;
+package smb.cmn.pbc;
 
 import org.springframework.stereotype.Controller;
 

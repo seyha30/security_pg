@@ -1,4 +1,4 @@
-package smb.cmt.cbc;
+package smb.cmn.cbc;
 
 public class userCbc {
 
